@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div.Page{
+            text-align: center;
+        }
+        ul.nextPage{
+            display: inline-block;
+            padding: 0;
+            margin: 0 0;
+        }
+       ul.nextPage li{
+            display: inline;
+           list-style: none;
+        }
+        ul.nextPage li a{
+            color: black;
+            float: left;
+            margin: 0 -1px -1px 0;
+            text-decoration: none;
+            padding: 5px 10px;
+
+            border: 1px solid #ddd;
+            transition: background-color .5s ,transfrom .3s;
+        }
+
+        ul.nextPage li:first-child a{
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+
+        }
+        
+        ul.nextPage li:last-child a{
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        ul.nextPage li a:hover{
+            background-color: grey;
+            color: #ffffff;
+            transform: translateY(5px);
+            box-shadow: 1px 5px  3px #ddd;
+        }
+        ul.nextPage li a.more{
+            background-color: rgba(180, 30, 43, 0.97);
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+<form method="post" action="submit.html" name="form" >
+<div class="Page">
+    姓名<input type="text" name="name">
+    <button type="submit" value="submit" onclick="valied()"  >submit</button>
+    <p id="test"></p>
+
+    <ul class="nextPage">
+        <li><a class="more" href="#"><</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">8</a></li>
+        <li><a href="#"> > </a></li>
+    </ul>
+
+</div>
+</form>
+<script>
+    function  valied() {
+        var d= document.forms["forms"]["name"].value;
+        if (d ==""|| d==null ){
+            document.getElementById("test").innerHTML = "不能为空";
+
+
+        }
+
+    }
+</script>
+
+</body>
+</html>
